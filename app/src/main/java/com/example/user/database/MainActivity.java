@@ -80,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         String email2=dataSnapshot.getValue().toString();
                         t2.setText("Email:" + email2);
+                        Intent i = new Intent(MainActivity.this,Main2Activity.class);
+                        i.putExtra("SMIT",email2);
+                        startActivity(i);
                     }
 
                     @Override
@@ -87,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
                 /*firebase2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
